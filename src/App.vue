@@ -1,34 +1,23 @@
 <template>
   <div id="app">
-    <!--<HelloWorld/>-->
-    <!--<Test/>-->
-
-    <User msg=" Hellow">
-
-    </User>
+    <img src="./assets/logo.png">
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Test from './components/Test.vue'
-import User from './components/User.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld,Test,User
+  export default {
+    name: 'app'
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>

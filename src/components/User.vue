@@ -24,7 +24,7 @@
 
 <script>
   export default {
-    name: 'userss',
+    name: 'users',
 
     data() {
       return {
@@ -63,15 +63,16 @@
       }
     },
     created: function () {
-      console.log('created :')
+      console.log('created :');
       this.$http.get('http://jsonplaceholder.typicode.com/users')
         .then(function (responce) {
           console.log(responce.status);
           console.log(responce.statusText);
           console.log(responce.data);
-          this.users=responce.data;
+          this.users = responce.data;
 
         })
+
     }
   }
 </script>
