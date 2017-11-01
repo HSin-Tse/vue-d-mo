@@ -5,8 +5,9 @@ import Resourse from 'vue-resource'
 import HelloWorld from '@/components/HelloWorld'
 import Test from '@/components/Test.vue'
 import User from '@/components/User.vue'
-Vue.use(Router)
-Vue.use(Resourse)
+
+Vue.use(Router);
+Vue.use(Resourse);
 
 export default new Router({
   routes: [
