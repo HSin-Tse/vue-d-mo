@@ -53,7 +53,7 @@
       deleteUser: function (user) {
 //        alert('aaa')
 //        console.log(e.target.value);
-        this.users.splice(this.users.indexOf(user),1);
+        this.users.splice(this.users.indexOf(user), 1);
 
       },
       enterHit: function () {
@@ -62,12 +62,23 @@
 //        console.log(e.target.value)
       }
     },
+    created: function () {
+      console.log('created :')
+      this.$http.get('http://jsonplaceholder.typicode.com/users')
+        .then(function (responce) {
+          console.log(responce.status);
+          console.log(responce.statusText);
+          console.log(responce.data);
+          this.users=responce.data;
+
+        })
+    }
   }
 </script>
 
 <style scoped>
 
-  .contacted{
+  .contacted {
     text-decoration-line: line-through;
   }
 
