@@ -13,7 +13,7 @@
       <li v-for="user in users">
         <input type="checkbox" class="toggle" v-model="user.contacted">
         <span :class="{contacted:user.contacted}">
-        {{user.name}}:{{user.email}}:{{user.contacted}}
+        {{user.name}}:{{user.email}}:{{user.contacted}} <button v-on:click="deleteUser(user)"></button>
           </span>
       </li>
 
@@ -50,9 +50,11 @@
         e.preventDefault();
 
       },
-      pressKey: function (e) {
+      deleteUser: function (user) {
 //        alert('aaa')
-        console.log(e.target.value)
+//        console.log(e.target.value);
+        this.users.splice(this.users.indexOf(user),1);
+
       },
       enterHit: function () {
 //        alert('aaa')
