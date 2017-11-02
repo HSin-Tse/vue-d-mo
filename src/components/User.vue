@@ -1,6 +1,12 @@
 <template xmlns:v-on="http://www.w3.org/1999/xhtml">
   <div class="user">
     <h1>{{title}}</h1>
+    <div class="container">
+      <mu-flat-button label="Default" class="demo-flat-button"/>
+      <mu-flat-button label="Primary" class="demo-flat-button" primary/>
+      <mu-flat-button label="Secondary" class="demo-flat-button" secondary/>
+      <mu-flat-button label="Disabled" class="demo-flat-button" disabled/>
+    </div>
     <form v-on:submit="addUser">
       <input type="text" v-model="newUser.name" placeholder="name">
       <br>
@@ -13,7 +19,8 @@
       <li v-for="user in users">
         <input type="checkbox" class="toggle" v-model="user.contacted">
         <span :class="{contacted:user.contacted}">
-        {{user.name}}:{{user.email}}:{{user.contacted}} <button v-on:click="deleteUser(user)"></button>
+        {{user.name}}:{{user.email}}:{{user.contacted}}      <mu-flat-button  v-on:click="deleteUser(user)" label="X" class="demo-flat-button"/>
+
           </span>
       </li>
 
@@ -101,5 +108,8 @@
 
   a {
     color: #42b983;
+  }
+  .demo-flat-button {
+    margin: 12px;
   }
 </style>
