@@ -1,6 +1,7 @@
 <template xmlns:v-on="http://www.w3.org/1999/xhtml">
   <div class="user">
     <h1>{{title}}</h1>
+    <h1>{{this.$store.state.index}}</h1>
     <div class="container">
       <mu-flat-button label="Default" class="demo-flat-button"/>
       <mu-flat-button label="Primary" class="demo-flat-button" primary/>

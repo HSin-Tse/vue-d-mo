@@ -1,5 +1,9 @@
 <template xmlns:v-on="http://www.w3.org/1999/xhtml">
   <div class="test">
+    <h1>{{index}}</h1>
+    <h3>{{index}}</h3>
+    <h2>{{index}}</h2>
+    <h1>{{title|capitalize}}</h1>
     <h1>{{title|capitalize}}</h1>
 
     <!--<span v-html="title"></span>-->
@@ -9,6 +13,7 @@
     <p v-if="showNAme" v-text="user.firstName"></p>
     <p v-else> Nobody</p>
     <button v-on:click="greet(title)">Say Greet</button>
+    <button v-on:click="addo">addo</button>
 
     <ul>
       <li v-for="item in items">{{item.title}}</li>
@@ -17,10 +22,10 @@
     <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterHit">
 
     <br>
-    <label>  First Name: </label> <input type="text" v-model="user.firstName">
+    <label> First Name: </label> <input type="text" v-model="user.firstName">
     <br>
 
-    <label>  Last Name: </label> <input type="text" v-model="user.lastName">
+    <label> Last Name: </label> <input type="text" v-model="user.lastName">
 
     <h3>{{fullname|capitalize}}</h3>
     <h3>{{msg|capitalize}}</h3>
@@ -31,10 +36,10 @@
 <script>
   export default {
     name: 'TestVue',
-    props:{
-      msg:{
+    props: {
+      msg: {
         type: String,
-        default:"foorbar"
+        default: "foorbar"
       }
     },
     data() {
@@ -64,6 +69,11 @@
       greet: function (he) {
         alert(he)
       },
+      addo: function () {
+        console.log('You hit addo')
+
+        this.$store.dispatch("addIndex");
+      },
       pressKey: function (e) {
 //        alert('aaa')
         console.log(e.target.value)
@@ -74,12 +84,14 @@
 //        console.log(e.target.value)
       }
     },
-    computed:{
+    computed: {
+      index: function () {
+        return this.$store.state.index
+      },
+      fullname: function () {
 
-      fullname: function(){
 
-
-        return this.user.firstName+  ':'+this.user.lastName
+        return this.user.firstName + ':' + this.user.lastName
       }
     }
   }
