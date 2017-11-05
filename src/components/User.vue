@@ -20,7 +20,8 @@
       <li v-for="user in users">
         <input type="checkbox" class="toggle" v-model="user.contacted">
         <span :class="{contacted:user.contacted}">
-        {{user.name}}:{{user.email}}:{{user.contacted}}      <mu-flat-button  v-on:click="deleteUser(user)" label="X" class="demo-flat-button"/>
+        {{user.name}}:{{user.email}}:{{user.contacted}}      <mu-flat-button v-on:click="deleteUser(user)" label="X"
+                                                                             class="demo-flat-button"/>
 
           </span>
       </li>
@@ -68,20 +69,41 @@
 //        alert('aaa')
         console.log('You hit enter')
 //        console.log(e.target.value)
-      }
-    },
-    created: function () {
-      console.log('created :');
-      this.$http.get('http://jsonplaceholder.typicode.com/users')
-        .then(function (responce) {
-          console.log(responce.status);
-          console.log(responce.statusText);
-          console.log(responce.data);
-          this.users = responce.data;
+      },
+      zhihu() {
+        this.axios.get('http://jsonplaceholder.typicode.com/users').then((rst) => {
+          console.log(rst)
+        }).catch((error) => {
 
         })
+      }
 
-    }
+    },
+    created: function () {
+
+      console.log('created :');
+//      this.$http.get('http://jsonplaceholder.typicode.com/users')
+//        .then(function (responce) {
+//          console.log(responce.status);
+//          console.log(responce.statusText);
+//          console.log(responce.data);
+//          this.users = responce.data;
+//
+//        });
+      var self = this;
+      this.axios.get('http://jsonplaceholder.typicode.com/users').then((response) => {
+        console.log("before: " +response.data);
+//        console.log(response.data)
+        self.users = response.data;
+        console.log("after: " +response.data);
+
+      }).catch(function (response) {
+        console.log(response.data);
+      });
+
+
+    },
+
   }
 </script>
 
@@ -110,6 +132,7 @@
   a {
     color: #42b983;
   }
+
   .demo-flat-button {
     margin: 12px;
   }
