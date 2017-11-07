@@ -19,8 +19,9 @@ Vue.use(MuseUI);
 Vue.use(VueAxios, axios);
 
 
-import Resourse from 'vue-resource'
-// Vue.use(Resourse);
+import VideoPlayer from 'vue-video-player'
+
+Vue.use(VideoPlayer);
 
 const store = new Vuex.Store({
   state: {
