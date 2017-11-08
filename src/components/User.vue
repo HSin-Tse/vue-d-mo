@@ -79,6 +79,7 @@
       }
 
     },
+
     created: function () {
 
       console.log('created :');

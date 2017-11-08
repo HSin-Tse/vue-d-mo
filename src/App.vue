@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-
+    <SideBar></SideBar>
     <ul>
 
       <li><router-link to="/"> USers</router-link></li>
@@ -12,9 +12,17 @@
   </div>
 </template>
 
+
+<!--import BNavSide from './components/SideBar.Vue'-->
 <script>
+  import SideBar from './components/SideBar.vue';
+
   export default {
-    name: 'app'
+    name: 'app',
+    components: {
+      SideBar,
+    }
+
   }
 </script>
 
