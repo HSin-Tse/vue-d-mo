@@ -6,6 +6,7 @@
 
       <li><router-link to="/"> USers</router-link></li>
       <li><router-link to="/test"> test</router-link></li>
+      <li><router-link to="/hello"> hello</router-link></li>
     </ul>
     <router-view/>
   </div>
