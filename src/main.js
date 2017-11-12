@@ -11,7 +11,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Vuex from 'vuex'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 Vue.use(Vuex);
 Vue.use(MuseUI);
@@ -37,7 +37,7 @@ const store = new Vuex.Store({
       commit('ADD_INDEX')
     },
   }
-})
+});
 
 
 import VueLazyload from 'vue-lazyload'
@@ -50,7 +50,7 @@ Vue.use(VueLazyload, {
   // error: 'dist/error.png',
   // loading: 'dist/loading.gif',
   attempt: 1
-})
+});
 
 
 new Vue({
@@ -59,4 +59,4 @@ new Vue({
   store,
   template: '<App/>',
   components: {App}
-})
+});

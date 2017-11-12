@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <SideBar></SideBar>
 
 
     <h1>{{ msg }}</h1>
@@ -32,7 +33,14 @@
 </template>
 
 <script>
+  import SideBar from '../components/SideBar.vue';
+
   export default {
+
+    components: {
+      SideBar,
+    },
+
     name: 'HelloWorld',
     data() {
       return {

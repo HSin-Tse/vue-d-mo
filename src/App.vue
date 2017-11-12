@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <SideBar></SideBar>
     <ul>
 
       <li><router-link to="/"> USers</router-link></li>
       <li><router-link to="/test"> test</router-link></li>
       <li><router-link to="/hello"> hello</router-link></li>
+      <li><router-link to="/watch"> watch</router-link></li>
+      <li><router-link to="/clock"> clock</router-link></li>
     </ul>
     <router-view/>
   </div>

@@ -82,7 +82,7 @@
 
     created: function () {
 
-      console.log('created :');
+      console.log('created USer:');
 //      this.$http.get('http://jsonplaceholder.typicode.com/users')
 //        .then(function (responce) {
 //          console.log(responce.status);
@@ -91,16 +91,17 @@
 //          this.users = responce.data;
 //
 //        });
-      var self = this;
-      this.axios.get('http://jsonplaceholder.typicode.com/users').then((response) => {
-        console.log("before: " +response.data);
-//        console.log(response.data)
-        self.users = response.data;
-        console.log("after: " +response.data);
 
-      }).catch(function (response) {
-        console.log(response.data);
-      });
+
+//      var self = this;
+//      this.axios.get('http://jsonplaceholder.typicode.com/users').then((response) => {
+//        console.log("before: " +response.data);
+//        self.users = response.data;
+//        console.log("after: " +response.data);
+//
+//      }).catch(function (response) {
+//        console.log(response.data);
+//      });
 
 
     },

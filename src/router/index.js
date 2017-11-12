@@ -4,11 +4,11 @@ import Test from '@/components/Test.vue'
 import User from '@/components/User.vue'
 import Play from '@/components/Play.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
+import Watch from '@/components/Watch.vue'
+import DigitalClock from '@/components/DigitalClock.vue'
 
 
 Vue.use(Router);
-
-
 
 
 export default new Router({
@@ -32,5 +32,16 @@ export default new Router({
       path: '/play',
       name: 'play',
       component: Play
-    }]
+    },
+    {
+      path: '/Watch',
+      name: 'Watch',
+      component: Watch
+    },
+    {
+      path: '/clock',
+      name: 'Clock',
+      component: DigitalClock
+    }
+  ]
 })
